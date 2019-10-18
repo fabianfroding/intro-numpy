@@ -54,3 +54,34 @@ print("Study minutes second day: ", second_day_minutes)
 
 study_minutes[2: 6] = [80, 60, 30, 90] # from 2 up to but not including 6. AkA slicing
 print(study_minutes)
+
+study_minutes = np.array(
+    [study_minutes,
+    np.zeros(100, np.uint16)
+])
+
+print(study_minutes.shape)
+
+study_minutes[1, 0] = 60
+
+print(study_minutes[1, 0])
+
+rand = np.random.RandomState(42)
+fake_log = rand.randint(30, 180, size=100, dtype=np.uint16)
+
+print(fake_log)
+
+#print(fake_log[3], fake_log[8])
+# Fancy indexing
+print(fake_log[[3, 8]])
+
+index = np.array([[3, 8], [0, 1]])
+print(fake_log[index])
+
+study_minutes = np.append(study_minutes, [fake_log], axis=0)
+
+study_minutes[1, 1] = 360
+
+print(study_minutes)
+
+
